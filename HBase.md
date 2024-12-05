@@ -115,7 +115,7 @@ cd /usr/local/hadoop
 ./sbin/start-dfs.sh
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119154821995.png" alt="image-20241119154821995" style="zoom: 50%;" />
+<img src="images/hbase/image-20241119154821995.png" alt="image-20241119154821995" style="zoom: 50%;" />
 
 启动HBase
 
