@@ -124,7 +124,7 @@ cd /usr/local/hbase
 bin/start-hbase.sh
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119155157284.png" alt="image-20241119155157284" style="zoom:50%;" />
+<img src="images/hbase/image-20241119155157284.png" alt="image-20241119155157284" style="zoom:50%;" />
 
 进入HBase Shell模式
 
@@ -132,7 +132,7 @@ bin/start-hbase.sh
 bin/hbase shell
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119155253956.png" alt="image-20241119155253956" style="zoom:50%;" />
+<img src="images/hbase/image-20241119155253956.png" alt="image-20241119155253956" style="zoom:50%;" />
 
 完整流程
 
@@ -162,7 +162,7 @@ cd /usr/local/hadoop
 create 'student','Sname','Ssex','Sage','Sdept','course'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119160224609.png" alt="image-20241119160224609" style="zoom:50%;" />
+<img src="images/hbase/image-20241119160224609.png" alt="image-20241119160224609" style="zoom:50%;" />
 
 对于HBase而言，创建HBase时，无需自行创建行键，系统会默认一个属性作为行间，通常是把put命令操作中跟在表名后的第一个数据作为行键
 
@@ -172,7 +172,7 @@ create 'student','Sname','Ssex','Sage','Sdept','course'
 describe 'student'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119160626880.png" alt="image-20241119160626880" style="zoom:50%;" />
+<img src="images/hbase/image-20241119160626880.png" alt="image-20241119160626880" style="zoom:50%;" />
 
 可以使用list命令查看当前HBase数据库中已经创建的表
 
@@ -180,7 +180,7 @@ describe 'student'
 list
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119160753860.png" alt="image-20241119160753860" style="zoom:50%;" />
+<img src="images/hbase/image-20241119160753860.png" alt="image-20241119160753860" style="zoom:50%;" />
 
 ###### 2.2 添加数据
 
@@ -190,7 +190,7 @@ HBase使用put命令添加数据，一次只能为一个表的一行数据的一
 put 'student','95001','Sname','LiYing'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119161627935.png" alt="image-20241119161627935" style="zoom:50%;" />
+<img src="images/hbase/image-20241119161627935.png" alt="image-20241119161627935" style="zoom:50%;" />
 
 上面的put命令会为student表添加学号为'95001'，名字为'LiYing'的一个单元格数据，其行键为95001，系统会默认把跟在表名student后面的第一个数据作为行键
 
@@ -217,7 +217,7 @@ HBase中有两个用于查看数据的命令
 get 'student','95001'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119162328604.png" alt="image-20241119162328604" style="zoom:50%;" />
+<img src="images/hbase/image-20241119162328604.png" alt="image-20241119162328604" style="zoom:50%;" />
 
 也可以通过scan命令查看student表中的所有信息
 
@@ -225,7 +225,7 @@ get 'student','95001'
 scan 'student'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119162444313.png" alt="image-20241119162444313" style="zoom:50%;" />
+<img src="images/hbase/image-20241119162444313.png" alt="image-20241119162444313" style="zoom:50%;" />
 
 ###### 2.4 删除数据
 
@@ -243,11 +243,11 @@ scan 'student'
 delete 'student','95001','Ssex'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119163110649.png" alt="image-20241119163110649" style="zoom:50%;" />
+<img src="images/hbase/image-20241119163110649.png" alt="image-20241119163110649" style="zoom:50%;" />
 
 此时的student表
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119163203488.png" alt="image-20241119163203488" style="zoom:50%;" />
+<img src="images/hbase/image-20241119163203488.png" alt="image-20241119163203488" style="zoom:50%;" />
 
 95001这行中的Ssex列的所有数据已经被删除
 
@@ -257,7 +257,7 @@ delete 'student','95001','Ssex'
 deleteall 'student','95001'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119163800154.png" alt="image-20241119163800154" style="zoom:50%;" />
+<img src="images/hbase/image-20241119163800154.png" alt="image-20241119163800154" style="zoom:50%;" />
 
 ###### 2.5 删除表
 
@@ -268,7 +268,7 @@ disable 'student'
 drop 'student'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119164001052.png" alt="image-20241119164001052" style="zoom:50%;" />
+<img src="images/hbase/image-20241119164001052.png" alt="image-20241119164001052" style="zoom:50%;" />
 
 ###### 2.6 查询历史数据
 
@@ -280,7 +280,7 @@ drop 'student'
 create 'teacher',{NAME=>'username',VERSIONS=>5}
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119164601397.png" alt="image-20241119164601397" style="zoom:50%;" />
+<img src="images/hbase/image-20241119164601397.png" alt="image-20241119164601397" style="zoom:50%;" />
 
 插入数据，并更新数据，使其产生历史版本数据，需要注意的是，这里插入数据和更新数据都是使用put命令，具体如下：
 
@@ -293,7 +293,7 @@ put 'teacher','91001','username','Mary4'
 put 'teacher','91001','username','Mary5'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119164957772.png" alt="image-20241119164957772" style="zoom:50%;" />
+<img src="images/hbase/image-20241119164957772.png" alt="image-20241119164957772" style="zoom:50%;" />
 
 查询时默认情况下会显示当前最新版本的数据，如果要查询历史数据，需要指定查询的历史版本数，由于上面设置了保存版本数为5，所有，在查询时指定的历史版本数的有效取值为1~5，具体命令如下：
 
@@ -302,9 +302,9 @@ get 'teacher','91001',{COLUMN=>'username',VERSIONS=>5}
 get 'teacher','91001',{COLUMN=>'username',VERSIONS=>3}
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119165359354.png" alt="image-20241119165359354" style="zoom:50%;" />
+<img src="images/hbase/image-20241119165359354.png" alt="image-20241119165359354" style="zoom:50%;" />
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119165418857.png" alt="image-20241119165418857" style="zoom:50%;" />
+<img src="images/hbase/image-20241119165418857.png" alt="image-20241119165418857" style="zoom:50%;" />
 
 ###### 2.7 退出HBase数据库
 
@@ -313,7 +313,7 @@ exit
 bin/stop-hbase.sh
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119165628123.png" alt="image-20241119165628123" style="zoom:50%;" />
+<img src="images/hbase/image-20241119165628123.png" alt="image-20241119165628123" style="zoom:50%;" />
 
 ###### 测试程序(Java)
 
@@ -398,7 +398,7 @@ public class ExampleForHBase {
 }
 ~~~
 
-![image-20241129172730565](C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241129172730565.png)
+![image-20241129172730565](images/hbase/image-20241129172730565.png)
 
 进入HBase命令行：
 
@@ -407,19 +407,19 @@ cd /usr/local/hbase
 ./bin/hbase shell
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241129173142055.png" alt="image-20241129173142055" style="zoom: 50%;" />
+<img src="images/hbase/image-20241129173142055.png" alt="image-20241129173142055" style="zoom: 50%;" />
 
 ~~~
 list
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241129173207420.png" alt="image-20241129173207420" style="zoom:50%;" />
+<img src="images/hbase/image-20241129173207420.png" alt="image-20241129173207420" style="zoom:50%;" />
 
 ~~~
 scan 'student'
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241129173247867.png" alt="image-20241129173247867" style="zoom: 50%;" />
+<img src="images/hbase/image-20241129173247867.png" alt="image-20241129173247867" style="zoom: 50%;" />
 
 -------------------------
 
@@ -509,7 +509,7 @@ bin/hbase-daemon.sh start thrift
 > socket.setTimeout(50000)
 > ~~~
 >
-> ![image-20241130145256665](C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241130145256665.png)
+> ![image-20241130145256665](images/hbase/image-20241130145256665.png)
 
 #### 启动(快捷)
 
@@ -532,7 +532,7 @@ bin/hbase-daemon.sh start thrift
 
 ##### 1.HBase的数据结构
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204165106298.png" alt="image-20241204165106298" style="zoom:50%;" />
+<img src="images/hbase/image-20241204165106298.png" alt="image-20241204165106298" style="zoom:50%;" />
 
 ###### **1.1 RowKey:**
 
@@ -615,7 +615,7 @@ HBase 将表中的数据基于 RowKey 的不同范围划分到不同 Region 上�
 
 HBase 的核心架构由五部分组成，分别是 HBase Client、HMaster、Region Server、ZooKeeper 以及 HDFS。它的架构组成如下图所示。
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204174608061.png" alt="image-20241204174608061" style="zoom:80%;" />
+<img src="images/hbase/image-20241204174608061.png" alt="image-20241204174608061" style="zoom:80%;" />
 
 ###### 2.1 HBase Client
 
@@ -909,7 +909,7 @@ con.close()  # 关闭传输
 >
 > Connection中传本地IP(可通过ifconfig查询)
 
-![image-20241204202321068](C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204202321068.png)
+![image-20241204202321068](images/hbase/image-20241204202321068.png)
 
 也可直接传localhost
 
@@ -921,7 +921,7 @@ con = happybase.Connection("localhost")
 
 ###### 7.2 判断表是否存在
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204203551187.png" alt="image-20241204203551187" style="zoom: 50%;" />
+<img src="images/hbase/image-20241204203551187.png" alt="image-20241204203551187" style="zoom: 50%;" />
 
 > [!IMPORTANT]
 >
@@ -941,7 +941,7 @@ def isTableExist(tablename):
         print(f"{tablename} is not exist!")
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204203848953.png" alt="image-20241204203848953" style="zoom:50%;" />
+<img src="images/hbase/image-20241204203848953.png" alt="image-20241204203848953" style="zoom:50%;" />
 
 ###### 7.3 创建表
 
@@ -961,7 +961,7 @@ con = happybase.Connection('192.168.175.128')
 con.open()
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204204944155.png" alt="image-20241204204944155" style="zoom:50%;" />
+<img src="images/hbase/image-20241204204944155.png" alt="image-20241204204944155" style="zoom:50%;" />
 
 **配置选项**
 
@@ -1012,7 +1012,7 @@ print(con.is_table_enabled('fruit'))  # 查看表的状态，False代表禁用�
 print(con.tables())  # 即使禁用了该表，该表还是存在的，只是状态改变了
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204205513994.png" alt="image-20241204205513994" style="zoom:50%;" />
+<img src="images/hbase/image-20241204205513994.png" alt="image-20241204205513994" style="zoom:50%;" />
 
 ~~~
 import happybase
@@ -1025,7 +1025,7 @@ print(con.is_table_enabled('fruit'))  # 查看表的状态，False代表禁用�
 print(con.tables())  # 即使禁用了该表，该表还是存在的，只是状态改变了
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204205611485.png" alt="image-20241204205611485" style="zoom: 50%;" />
+<img src="images/hbase/image-20241204205611485.png" alt="image-20241204205611485" style="zoom: 50%;" />
 
 ###### 7.5 删除表
 
@@ -1051,7 +1051,7 @@ print("删除后：", con.tables())
 con.close()
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204211522492.png" alt="image-20241204211522492" style="zoom:50%;" />
+<img src="images/hbase/image-20241204211522492.png" alt="image-20241204211522492" style="zoom:50%;" />
 
 ###### 7.6 建立数据
 
@@ -1083,7 +1083,7 @@ con.close()
 
 提交数据，0001代表行键，写入的数据要使用字典形式表示
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241204212527336.png" alt="image-20241204212527336" style="zoom:50%;" />
+<img src="images/hbase/image-20241204212527336.png" alt="image-20241204212527336" style="zoom:50%;" />
 
 ###### 7.7 查看数据
 
@@ -1117,7 +1117,7 @@ for rowkey, Column_Family in table.scan():  # 获取扫描器对象，该对象�
 con.close()  # 关闭传输
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241205112447338.png" alt="image-20241205112447338" style="zoom:67%;" />
+<img src="images/hbase/image-20241205112447338.png" alt="image-20241205112447338" style="zoom:67%;" />
 
 ###### 7.8 删除数据
 
@@ -1173,7 +1173,7 @@ print(data)
 mysql_conn.close()
 ~~~
 
-![image-20241205120435443](C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241205120435443.png)
+![image-20241205120435443](images/hbase/image-20241205120435443.png)
 
 > [!IMPORTANT]
 >
@@ -1212,7 +1212,7 @@ hbase_conn.close()
 
 ~~~
 
-<img src="C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241205152819568.png" alt="image-20241205152819568" style="zoom:67%;" />
+<img src="images/hbase/image-20241205152819568.png" alt="image-20241205152819568" style="zoom:67%;" />
 
 ##### 8. 大数据应用
 
