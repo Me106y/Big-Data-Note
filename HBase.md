@@ -96,7 +96,7 @@ http://localhost:9870
 
 就可以查看名称节点和数据节点信息，还可以在线查看HDFS中的文件
 
-![image-20241119123625915](C:\Users\16782\AppData\Roaming\Typora\typora-user-images\image-20241119123625915.png)
+![image-20241119123625915](https://github.com/Me106y/Big-Data-Note/tree/main/images/hbase/image-20241119123625915.png)
 
 ~~~
 localhost:9000
